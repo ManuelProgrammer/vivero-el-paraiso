@@ -1,12 +1,12 @@
 # 🌿 Vivero El Paraíso — Tienda Virtual
 
-> Plataforma de comercio electrónico para la compra de plantas, herramientas de jardín, abonos y fertilizantes.
+> Plataforma de comercio electrónico para la compra de plantas, árboles, flores, herramientas de jardín, abonos y fertilizantes.
 
 ---
 
 ## 📌 Descripción
 
-**Vivero El Paraíso** es una tienda virtual desarrollada como proyecto personal con fines de portafolio profesional. El proyecto busca simular un e-commerce real de un vivero, aplicando buenas prácticas de desarrollo web moderno.
+**Vivero El Paraíso** es una tienda virtual desarrollada como proyecto personal con fines de portafolio profesional. El proyecto busca simular un e-commerce real de un vivero, aplicando buenas prácticas de desarrollo web moderno como componentes reutilizables, separación de responsabilidades, control de versiones y documentación profesional.
 
 ---
 
@@ -26,6 +26,7 @@
 - [Git](https://git-scm.com/) — Control de versiones
 - [GitHub](https://github.com/) — Repositorio remoto
 - [Postman](https://www.postman.com/) — Pruebas de la API
+- [Node.js](https://nodejs.org/) v24 — Entorno de ejecución para el frontend
 
 ---
 
@@ -33,22 +34,31 @@
 
 ```
 vivero-el-paraiso/
-├── frontend/              # Aplicación React
-│   ├── src/
-│   │   ├── components/    # Componentes reutilizables
-│   │   ├── pages/         # Vistas / páginas
-│   │   ├── context/       # Estado global (carrito, auth, favoritos)
-│   │   ├── hooks/         # Custom hooks reutilizables
-│   │   ├── services/      # Llamadas a la API
-│   │   └── utils/         # Funciones utilitarias
-│   └── public/
+├── README.md
+├── .gitignore
+├── docs/
+│   ├── requerimientos.md      # Requerimientos funcionales y no funcionales
+│   └── changelog.md           # Historial de cambios y versiones
 │
-└── backend/               # API REST en PHP
-    ├── config/            # Configuración de base de datos
-    ├── controllers/       # Lógica de negocio
-    ├── models/            # Representación de datos
-    ├── routes/            # Rutas de la API
-    └── middleware/        # Autenticación y seguridad
+├── frontend/                  # Aplicación React (Vite)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/        # Componentes reutilizables
+│   │   ├── pages/             # Vistas / páginas
+│   │   ├── context/           # Estado global (carrito, auth, favoritos)
+│   │   ├── hooks/             # Custom hooks reutilizables
+│   │   ├── services/          # Llamadas a la API
+│   │   └── utils/             # Funciones utilitarias
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
+│
+└── backend/                   # API REST en PHP (próximamente)
+    ├── config/
+    ├── controllers/
+    ├── models/
+    ├── routes/
+    └── middleware/
 ```
 
 ---
@@ -59,11 +69,10 @@ vivero-el-paraiso/
 - Node.js >= 18
 - PHP >= 8.1
 - MySQL >= 8.0
-- Composer (gestor de dependencias PHP)
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/vivero-el-paraiso.git
+git clone https://github.com/ManuelProgrammer/vivero-el-paraiso.git
 cd vivero-el-paraiso
 ```
 
@@ -71,21 +80,15 @@ cd vivero-el-paraiso
 ```bash
 cd frontend
 npm install
-cp .env.example .env       # Copiar variables de entorno
-npm run dev                # Iniciar en modo desarrollo
+cp .env.example .env
+npm run dev
 ```
 
-### 3. Configurar el backend
+### 3. Configurar el backend *(próximamente)*
 ```bash
 cd backend
 cp config/database.example.php config/database.php
 # Editar database.php con tus credenciales de MySQL
-```
-
-### 4. Configurar la base de datos
-```bash
-# Importar el esquema en MySQL
-mysql -u root -p < database/schema.sql
 ```
 
 ---
@@ -94,41 +97,63 @@ mysql -u root -p < database/schema.sql
 
 | Página | Ruta | Descripción |
 |--------|------|-------------|
-| Inicio | `/` | Hero, productos destacados y categorías |
-| Tienda | `/tienda` | Catálogo con filtros por categoría |
-| Producto | `/producto/:id` | Detalle de un producto |
+| Inicio | `/` | Hero con banner dinámico, productos destacados y categorías |
+| Tienda | `/tienda` | Catálogo con filtros dinámicos por categoría y características |
+| Producto | `/producto/:id` | Ficha completa del producto |
 | Carrito | `/carrito` | Gestión de compra |
 | Favoritos | `/favoritos` | Productos guardados por el usuario |
 | Login | `/login` | Inicio de sesión |
 | Registro | `/registro` | Crear cuenta nueva |
+| Perfil | `/perfil` | Datos personales, envío e historial de órdenes |
 | Blog | `/blog` | Artículos sobre el vivero |
+| Soporte | `/soporte` | Formulario de contacto y ayuda |
 | Admin | `/admin` | Panel de administración (protegido) |
 
 ---
 
-## 🔐 Variables de entorno
+## ✅ Estado del proyecto
 
-Crear un archivo `.env` en `/frontend` con:
+| Fase | Descripción | Estado |
+|------|-------------|--------|
+| 📄 Documentación inicial | README, requerimientos, changelog | ✅ Completado |
+| 🌱 Configuración Git y GitHub | Repositorio, ramas, .gitignore | ✅ Completado |
+| ⚛️ Inicialización React + Vite | Proyecto base con estructura de carpetas | ✅ Completado |
+| 🗄️ Diseño de base de datos | Diagrama ERD y tablas | ⏳ Pendiente |
+| 🔧 API REST en PHP | Endpoints de productos, usuarios, órdenes | ⏳ Pendiente |
+| 🎨 Desarrollo del frontend | Páginas y componentes | ⏳ Pendiente |
+| 💳 Pasarela de pagos | Integración MercadoPago | ⏳ Pendiente |
+| 🚀 Despliegue | Publicación en servidor | ⏳ Pendiente |
 
-```env
-VITE_API_URL=http://localhost:8000/api
-```
+---
+
+## 🧩 Funcionalidades principales
+
+- 🛍️ Tienda virtual con carrito de compras
+- 🔍 Buscador y filtros dinámicos por características de plantas
+- ❤️ Lista de favoritos por usuario
+- 👤 Perfil de usuario con información personal y de envío
+- 🔐 Autenticación con roles (Usuario / Administrador)
+- 📊 Panel administrativo con dashboard de estadísticas
+- 🖼️ Banner dinámico gestionable desde el panel
+- 📝 Blog del vivero
+- 📞 Página de soporte al cliente
+- 🌿 Redes sociales del vivero en el footer
 
 ---
 
 ## 📄 Documentación
 
-- [`docs/requerimientos.md`](docs/requerimientos.md) — Requerimientos funcionales y no funcionales
+- [`docs/requerimientos.md`](docs/requerimientos.md) — Requerimientos funcionales y no funcionales (v1.3)
 - [`docs/changelog.md`](docs/changelog.md) — Historial de cambios y versiones
-- [`docs/base-de-datos.md`](docs/base-de-datos.md) — Diagrama y descripción de tablas *(próximamente)*
-- [`docs/wireframes/`](docs/wireframes/) — Bocetos de las interfaces *(próximamente)*
+- `docs/base-de-datos.md` — Diagrama y descripción de tablas *(próximamente)*
+- `docs/wireframes/` — Bocetos de las interfaces *(próximamente)*
 
 ---
 
 ## 👤 Autor
 
 **[Tu nombre aquí]**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+- GitHub: [@ManuelProgrammer](https://github.com/ManuelProgrammer)
 - LinkedIn: [linkedin.com/in/tu-perfil](https://linkedin.com/in/tu-perfil)
 
 ---
