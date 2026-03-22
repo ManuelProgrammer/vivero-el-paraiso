@@ -160,4 +160,4 @@ cp config/database.example.php config/database.php
 
 ## 📜 Licencia
 
-Este proyecto está bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más detalles.
+Este proyecto está bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike. Ver [`LICENSE`](LICENSE) para más detalles.
