@@ -1,7 +1,7 @@
 # 📋 Requerimientos del Sistema — Vivero El Paraíso
 
 **Proyecto:** Vivero El Paraíso — Tienda Virtual  
-**Versión del documento:** 1.3  
+**Versión del documento:** 1.4  
 **Fecha:** 2026  
 **Estado:** En definición  
 
@@ -293,10 +293,48 @@ Estos son los datos que el sistema le pedirá al usuario en el momento del regis
 
 ## 5. Roles del sistema
 
+### Invitado (sin cuenta)
+
+| Acción | Permitido |
+|--------|-----------|
+| Ver catálogo de productos | ✅ Sí |
+| Ver detalle de producto | ✅ Sí |
+| Visitar el blog | ✅ Sí |
+| Usar el buscador y filtros | ✅ Sí |
+| Comentar en el blog | ❌ No |
+| Agregar productos al carrito | ❌ No |
+| Guardar en favoritos | ❌ No |
+| Comprar | ❌ No |
+| Ver su perfil | ❌ No |
+
+> Cuando un invitado intente realizar una acción que requiere cuenta, el sistema lo redirigirá automáticamente a la página de Login/Registro.
+
+### Usuario registrado
+
+
+### RF-00 — Usuario invitado (sin cuenta)
+
+| Código | Descripción | Prioridad |
+|--------|-------------|-----------|
+| RF-00-1 | Un visitante sin cuenta puede navegar y ver el catálogo de productos | Alta |
+| RF-00-2 | Un visitante sin cuenta puede ver el detalle de cada producto | Alta |
+| RF-00-3 | Un visitante sin cuenta puede leer los artículos del blog | Alta |
+| RF-00-4 | Un visitante sin cuenta puede ver la página de soporte y enviar un mensaje | Alta |
+| RF-00-5 | Un visitante NO puede agregar productos al carrito | Alta |
+| RF-00-6 | Un visitante NO puede guardar productos en favoritos | Alta |
+| RF-00-7 | Un visitante NO puede realizar compras | Alta |
+| RF-00-8 | Un visitante NO puede comentar en el blog | Alta |
+| RF-00-9 | Si un visitante intenta realizar una acción restringida, el sistema lo redirige al Login |  Alta |
+
 | Rol | Permisos |
 |-----|----------|
-| Usuario | Comprar, ver perfil, favoritos, historial de órdenes |
-| Administrador | Todo lo anterior + acceso completo al panel de administración |
+| Invitado | Ver catálogo, usar buscador y filtros, ver blog, ver soporte |
+| Usuario | Todo lo anterior + carrito, favoritos, comprar, perfil e historial de órdenes |
+|-----|----------|
+|-----|----------|
+| Invitado | Ver catálogo, ver productos, leer blog, enviar mensaje de soporte |
+| Usuario | Todo lo anterior + comprar, carrito, favoritos, perfil, historial de órdenes |
+|-----|----------|
 
 ---
 
@@ -329,7 +367,9 @@ Estos son los datos que el sistema le pedirá al usuario en el momento del regis
 | 1.0 | 2026 | Documento inicial |
 | 1.1 | 2026 | Agregados: banner dinámico, dashboard, soporte, inventario, categorías, identidad visual |
 | 1.2 | 2026 | Agregados: sistema de filtrado dinámico, gestión de cuentas por admin, perfil editable, buscador |
+| 1.4 | 2026 | Agregado: rol de invitado con permisos limitados |
 | 1.3 | 2026 | Agregados: perfil detallado con info de envío y redes sociales, datos de registro, roles del sistema, gestión completa de cuentas, redes sociales del vivero en footer |
+| 1.4 | 2026 | Agregado: usuario invitado con permisos limitados, tabla de roles actualizada con 3 niveles |
 
 ---
 

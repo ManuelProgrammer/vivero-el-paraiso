@@ -44,7 +44,7 @@ Guarda la información de todos los usuarios registrados en el sistema.
 | `telefono` | VARCHAR(20) | Número de teléfono o celular |
 | `fecha_nacimiento` | DATE | Fecha de nacimiento |
 | `foto_perfil` | VARCHAR(255) | Ruta de la imagen de perfil |
-| `rol` | ENUM('usuario', 'admin') | Rol del usuario en el sistema |
+| `rol` | ENUM('usuario', 'admin') | Rol del usuario en el sistema (los invitados no se registran en esta tabla) |
 | `estado` | ENUM('activo', 'bloqueado') | Estado de la cuenta |
 | `direccion` | VARCHAR(255) | Dirección de envío |
 | `ciudad` | VARCHAR(100) | Ciudad de envío |
@@ -262,7 +262,17 @@ Guarda los enlaces a las redes sociales del vivero que aparecen en el footer.
 
 ---
 
-## 4. Glosario de términos
+## 4. Roles del sistema
+
+| Rol | Registrado en BD | Permisos |
+|-----|-----------------|----------|
+| Invitado | ❌ No | Ver catálogo, buscador, filtros, blog y soporte |
+| Usuario | ✅ Sí | Todo lo anterior + carrito, favoritos, comprar y perfil |
+| Administrador | ✅ Sí | Todo lo anterior + panel de administración completo |
+
+---
+
+## 5. Glosario de términos
 
 | Término | Significado |
 |---------|-------------|
