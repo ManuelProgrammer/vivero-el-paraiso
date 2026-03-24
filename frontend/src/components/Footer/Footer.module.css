@@ -1,0 +1,154 @@
+/* ===== FOOTER — Vivero El Paraíso ===== */
+
+.footer {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  margin-top: auto;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.contenido {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--espacio-xxl);
+  padding: var(--espacio-xxl) var(--espacio-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== COLUMNAS ===== */
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.descripcion {
+  font-size: var(--texto-pequeño);
+  line-height: 1.7;
+  color: var(--verde-suave);
+}
+
+/* ===== REDES SOCIALES ===== */
+.redesSociales {
+  display: flex;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-xs);
+}
+
+.redSocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--blanco);
+  transition: var(--transicion);
+}
+
+.redSocial:hover {
+  background-color: var(--verde-claro);
+  transform: translateY(-3px);
+}
+
+/* ===== TÍTULOS ===== */
+.titulo {
+  font-size: var(--texto-normal);
+  font-weight: 700;
+  color: var(--blanco);
+  padding-bottom: var(--espacio-sm);
+  border-bottom: 2px solid var(--verde-medio);
+}
+
+/* ===== LISTAS ===== */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+}
+
+.lista li a {
+  color: var(--verde-suave);
+  font-size: var(--texto-pequeño);
+  transition: var(--transicion);
+}
+
+.lista li a:hover {
+  color: var(--blanco);
+  padding-left: var(--espacio-xs);
+}
+
+/* ===== LISTA CONTACTO ===== */
+.listaContacto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+}
+
+.listaContacto li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-sm);
+  color: var(--verde-suave);
+  font-size: var(--texto-pequeño);
+  line-height: 1.5;
+}
+
+.listaContacto li span:first-child {
+  flex-shrink: 0;
+}
+
+/* ===== BARRA INFERIOR ===== */
+.barraInferior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-md) var(--espacio-xl);
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: var(--texto-pequeño);
+  color: var(--verde-suave);
+  max-width: 100%;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .contenido {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .contenido {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-lg);
+    padding: var(--espacio-xl) var(--espacio-md);
+  }
+
+  .barraInferior {
+    flex-direction: column;
+    gap: var(--espacio-xs);
+    text-align: center;
+    padding: var(--espacio-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .contenido {
+    grid-template-columns: 1fr;
+    padding: var(--espacio-lg) var(--espacio-md);
+  }
+
+  .logo {
+    width: 130px;
+  }
+}
