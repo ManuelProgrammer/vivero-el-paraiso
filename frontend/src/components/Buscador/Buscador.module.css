@@ -1,0 +1,179 @@
+/* ===== BUSCADOR — Vivero El Paraíso ===== */
+
+/* ===== POSICIONAMIENTO ===== */
+.flotante {
+  position: absolute;
+  top: var(--espacio-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  z-index: 10;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
+.normal {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));
+}
+
+/* ===== CONTENEDOR ===== */
+.buscador {
+  display: flex;
+  align-items: stretch;
+}
+
+/* ===== CATEGORÍAS ===== */
+.categoriasWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.btnCategorias {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  padding: 0 var(--espacio-md);
+  height: 52px;
+  background-color: var(--verde-medio);
+  color: var(--blanco);
+  font-weight: 600;
+  font-size: var(--texto-pequeño);
+  border-radius: var(--radio-md) 0 0 var(--radio-md);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+  box-sizing: border-box;
+}
+
+.btnCategorias:hover {
+  background-color: var(--verde-oscuro);
+}
+
+/* ===== MENÚ CATEGORÍAS ===== */
+.menuAbajo {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--blanco);
+  border: 1px solid var(--verde-suave);
+  border-radius: 0 0 var(--radio-md) var(--radio-md);
+  box-shadow: var(--sombra-lg);
+  width: 100%;
+  z-index: 1100;
+  overflow: hidden;
+}
+
+.menuArriba {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: var(--blanco);
+  border: 1px solid var(--verde-suave);
+  border-radius: var(--radio-md) var(--radio-md) 0 0;
+  box-shadow: var(--sombra-lg);
+  width: 100%;
+  z-index: 1100;
+  overflow: hidden;
+}
+
+.categoriaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  padding: var(--espacio-sm) var(--espacio-md);
+  color: var(--gris-oscuro);
+  font-size: var(--texto-pequeño);
+  transition: var(--transicion);
+}
+
+.categoriaItem:hover {
+  background-color: var(--verde-fondo);
+  color: var(--verde-oscuro);
+}
+
+/* ===== INPUT ===== */
+.input {
+  flex: 1;
+  height: 52px;
+  padding: 0 var(--espacio-md);
+  border: none;
+  outline: none;
+  font-size: var(--texto-normal);
+  font-family: var(--fuente-principal);
+  background-color: var(--blanco);
+  box-sizing: border-box;
+}
+
+/* ===== SELECT ===== */
+.select {
+  height: 52px;
+  padding: 0 32px 0 var(--espacio-md);
+  border: none;
+  border-left: 1px solid var(--verde-suave);
+  outline: none;
+  font-size: var(--texto-pequeño);
+  font-family: var(--fuente-principal);
+  color: var(--gris-oscuro);
+  background-color: var(--blanco);
+  cursor: pointer;
+  font-weight: 500;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234CAF50' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  box-sizing: border-box;
+  transition: var(--transicion);
+}
+
+.select:hover {
+  background-color: var(--verde-fondo);
+}
+
+/* ===== BOTÓN BUSCAR ===== */
+.btnBuscar {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  height: 52px;
+  padding: 0 var(--espacio-lg);
+  background-color: var(--verde-claro);
+  color: var(--blanco);
+  font-weight: 700;
+  font-size: var(--texto-normal);
+  border-radius: 0 var(--radio-md) var(--radio-md) 0;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+  box-sizing: border-box;
+}
+
+.btnBuscar:hover {
+  background-color: var(--verde-oscuro);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .select {
+    display: none;
+  }
+
+  .flotante {
+    width: 95%;
+    bottom: var(--espacio-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .btnCategorias span {
+    display: none;
+  }
+}

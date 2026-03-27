@@ -1,0 +1,211 @@
+/* ===== BANNER — Vivero El Paraíso ===== */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* ===== SLIDES ===== */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.activo {
+  opacity: 1;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  bottom: var(--espacio-xl);
+  right: var(--espacio-xl);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* ===== BOTÓN ===== */
+.btnVerTienda {
+  display: inline-block;
+  padding: var(--espacio-md) var(--espacio-xl);
+  background-color: rgba(76, 175, 80, 0.3);
+  color: var(--blanco);
+  font-size: var(--texto-medio);
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  transition: var(--transicion);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.btnVerTienda:hover,
+.btnVerTienda:focus {
+  background-color: var(--verde-claro);
+  border-color: var(--verde-claro);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-lg);
+}
+
+.btnVerTienda:active {
+  background-color: var(--verde-oscuro);
+  transform: translateY(0);
+}
+
+/* ===== TEXTO ===== */
+.texto {
+  padding: 0 var(--espacio-xxl);
+  max-width: 600px;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--blanco);
+  line-height: 1.1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  margin-bottom: var(--espacio-xs);
+}
+
+.subtitulo {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--verde-suave);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  margin-bottom: var(--espacio-lg);
+}
+
+.btnVerTienda {
+  display: inline-block;
+  padding: var(--espacio-md) var(--espacio-xl);
+  background-color: var(--verde-claro);
+  color: var(--blanco);
+  font-size: var(--texto-medio);
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  transition: var(--transicion);
+  box-shadow: var(--sombra-md);
+}
+
+.btnVerTienda:hover {
+  background-color: var(--verde-oscuro);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-lg);
+}
+
+/* ===== BOTONES NAVEGACIÓN ===== */
+.btnNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--blanco);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transicion);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.btnNav:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.btnAnterior {
+  left: var(--espacio-lg);
+}
+
+.btnSiguiente {
+  right: var(--espacio-lg);
+}
+
+/* ===== PUNTOS INDICADORES ===== */
+.puntos {
+  position: absolute;
+  bottom: var(--espacio-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--espacio-sm);
+  z-index: 10;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.puntoActivo {
+  background-color: var(--blanco);
+  width: 28px;
+  border-radius: var(--radio-full);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .banner {
+    height: 350px;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .texto {
+    padding: 0 var(--espacio-lg);
+  }
+
+  .btnVerTienda {
+    font-size: var(--texto-normal);
+    padding: var(--espacio-sm) var(--espacio-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 250px;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    margin-bottom: var(--espacio-md);
+  }
+
+  .btnNav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+}

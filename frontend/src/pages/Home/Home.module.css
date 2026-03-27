@@ -1,0 +1,249 @@
+/* ===== HOME — Vivero El Paraíso ===== */
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== CONTENEDOR ===== */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacio-xl);
+  width: 100%;
+}
+
+/* ===== SECCIONES ===== */
+.seccion {
+  padding: var(--espacio-xxl) 0;
+  background-color: var(--blanco);
+}
+
+.seccionVerde {
+  padding: var(--espacio-xxl) 0;
+  background-color: var(--verde-oscuro);
+}
+
+/* ===== TÍTULOS ===== */
+.titulo {
+  font-size: var(--texto-grande);
+  font-weight: 800;
+  color: var(--verde-oscuro);
+  text-align: center;
+  margin-bottom: var(--espacio-sm);
+}
+
+.subtitulo {
+  font-size: var(--texto-normal);
+  color: var(--gris-medio);
+  text-align: center;
+  margin-bottom: var(--espacio-xxl);
+}
+
+.tituloBlanco {
+  font-size: var(--texto-grande);
+  font-weight: 800;
+  color: var(--blanco);
+  text-align: center;
+  margin-bottom: var(--espacio-sm);
+}
+
+.subtituloBlanco {
+  font-size: var(--texto-normal);
+  color: var(--verde-suave);
+  text-align: center;
+  margin-bottom: var(--espacio-xxl);
+}
+
+/* ===== GRID CATEGORÍAS ===== */
+.gridCategorias {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--espacio-md);
+}
+
+.tarjetaCategoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-sm);
+  padding: var(--espacio-lg);
+  background-color: var(--verde-fondo);
+  border-radius: var(--radio-lg);
+  border: 2px solid transparent;
+  transition: var(--transicion);
+  text-align: center;
+  cursor: pointer;
+}
+
+.tarjetaCategoria:hover {
+  border-color: var(--verde-claro);
+  background-color: var(--blanco);
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-md);
+}
+
+.categoriaIcono {
+  font-size: 2.5rem;
+}
+
+.categoriaNombre {
+  font-size: var(--texto-normal);
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+.categoriaDescripcion {
+  font-size: var(--texto-pequeño);
+  color: var(--gris-medio);
+}
+
+/* ===== GRID BENEFICIOS ===== */
+.gridBeneficios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espacio-lg);
+}
+
+.tarjetaBeneficio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-md);
+  padding: var(--espacio-xl);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radio-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: var(--transicion);
+}
+
+.tarjetaBeneficio:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.beneficioIcono {
+  font-size: 3rem;
+}
+
+.beneficioTitulo {
+  font-size: var(--texto-normal);
+  font-weight: 700;
+  color: var(--blanco);
+}
+
+.beneficioDescripcion {
+  font-size: var(--texto-pequeño);
+  color: var(--verde-suave);
+  line-height: 1.6;
+}
+
+/* ===== LLAMADO A LA ACCIÓN ===== */
+.cta {
+  padding: var(--espacio-xxl) 0;
+  background-color: var(--verde-fondo);
+  text-align: center;
+}
+
+.ctaTitulo {
+  font-size: var(--texto-grande);
+  font-weight: 800;
+  color: var(--verde-oscuro);
+  margin-bottom: var(--espacio-md);
+}
+
+.ctaDescripcion {
+  font-size: var(--texto-medio);
+  color: var(--gris-medio);
+  margin-bottom: var(--espacio-xl);
+}
+
+.ctaBotones {
+  display: flex;
+  gap: var(--espacio-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimario {
+  padding: var(--espacio-md) var(--espacio-xxl);
+  background-color: var(--verde-medio);
+  color: var(--blanco);
+  font-size: var(--texto-medio);
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  transition: var(--transicion);
+}
+
+.btnPrimario:hover {
+  background-color: var(--verde-oscuro);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-lg);
+}
+
+.btnSecundario {
+  padding: var(--espacio-md) var(--espacio-xxl);
+  background-color: transparent;
+  color: var(--verde-oscuro);
+  font-size: var(--texto-medio);
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  border: 2px solid var(--verde-oscuro);
+  transition: var(--transicion);
+}
+
+.btnSecundario:hover {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-lg);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .gridCategorias {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gridBeneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gridCategorias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gridBeneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titulo,
+  .tituloBlanco,
+  .ctaTitulo {
+    font-size: 1.5rem;
+  }
+
+  .contenedor {
+    padding: 0 var(--espacio-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .gridCategorias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gridBeneficios {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBotones {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
