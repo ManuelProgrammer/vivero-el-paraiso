@@ -44,7 +44,7 @@ function Login() {
     }
     setLoginCargando(true)
     try {
-      const response = await fetch('http://localhost/vivero-el-paraiso/backend/index.php/api/auth', {
+      const response = await fetch('http://localhost/vivero-el-paraiso/backend/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'login', ...loginData }),
@@ -90,7 +90,7 @@ function Login() {
     }
     setRegistroCargando(true)
     try {
-      const response = await fetch('http://localhost/vivero-el-paraiso/backend/index.php/api/auth', {
+      const response = await fetch('http://localhost/vivero-el-paraiso/backend/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'registro', ...registroData }),

@@ -1,32 +1,28 @@
 <?php
 
-// Obtener la URL de la petición
 $request_uri = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
 
-// Limpiar la URL
 $uri = parse_url($request_uri, PHP_URL_PATH);
 $uri = explode('/', $uri);
 
-// Identificar el recurso solicitado
-// Ejemplo: /api/productos → $recurso = "productos"
-$recurso = isset($uri[2]) ? $uri[2] : '';
-$id = isset($uri[3]) ? $uri[3] : null;
+// Buscar el índice de 'api' en la URL
+$apiIndex = array_search('api', $uri);
 
-// Cargar controladores
-require_once '../config/database.php';
-require_once '../controllers/AuthController.php';
-require_once '../controllers/ProductController.php';
-require_once '../controllers/OrderController.php';
-require_once '../controllers/BlogController.php';
+// El recurso es el elemento después de 'api'
+$recurso = isset($uri[$apiIndex + 1]) ? $uri[$apiIndex + 1] : '';
+$id = isset($uri[$apiIndex + 2]) ? $uri[$apiIndex + 2] : null;
 
-// Instanciar base de datos
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../controllers/AuthController.php';
+require_once __DIR__ . '/../controllers/ProductController.php';
+require_once __DIR__ . '/../controllers/OrderController.php';
+require_once __DIR__ . '/../controllers/BlogController.php';
+
 $database = new Database();
 $db = $database->getConnection();
 
-// Enrutar la petición al controlador correcto
 switch ($recurso) {
-
     case 'auth':
         $controller = new AuthController($db);
         $controller->handle($method, $id);
@@ -52,3 +48,4 @@ switch ($recurso) {
         echo json_encode(["error" => "Ruta no encontrada"]);
         break;
 }
+
