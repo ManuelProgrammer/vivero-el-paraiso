@@ -201,19 +201,22 @@
   justify-content: center;
 }
 
-.btnLoginRegistro {
-  padding: var(--espacio-sm) var(--espacio-md);
-  background-color: var(--verde-medio);
-  color: var(--blanco);
+.btnRegistro {
+  padding: var(--espacio-sm) var(--espacio-lg);
+  background-color: transparent;
+  color: var(--verde-oscuro);
+  border: 2px solid var(--verde-oscuro);
   border-radius: var(--radio-full);
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--texto-pequeño);
   transition: var(--transicion);
   white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
-.btnLoginRegistro:hover {
+.btnRegistro:hover {
   background-color: var(--verde-oscuro);
+  color: var(--blanco);
   transform: translateY(-1px);
   box-shadow: var(--sombra-md);
 }
@@ -376,35 +379,34 @@
   }
 
 }
-.btnRegistro {
-  padding: var(--espacio-sm) var(--espacio-md);
-  background-color: transparent;
-  color: var(--verde-oscuro);
-  border: 2px solid var(--verde-oscuro);
-  border-radius: var(--radio-full);
-  font-weight: 600;
-  font-size: var(--texto-pequeño);
-  transition: var(--transicion);
-  white-space: nowrap;
-}
-
-.btnRegistro:hover {
-  background-color: var(--verde-fondo);
-}
-
 .btnLogin {
-  padding: var(--espacio-sm) var(--espacio-md);
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  padding: var(--espacio-sm) var(--espacio-lg);
   background-color: var(--verde-medio);
   color: var(--blanco);
   border-radius: var(--radio-full);
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--texto-pequeño);
   transition: var(--transicion);
   white-space: nowrap;
+  letter-spacing: 0.3px;
+  border: 2px solid transparent;
+}
+
+.btnLogin::after {
+  content: '→';
+  font-size: 1rem;
+  transition: var(--transicion);
 }
 
 .btnLogin:hover {
   background-color: var(--verde-oscuro);
   transform: translateY(-1px);
   box-shadow: var(--sombra-md);
+}
+
+.btnLogin:hover::after {
+  transform: translateX(4px);
 }

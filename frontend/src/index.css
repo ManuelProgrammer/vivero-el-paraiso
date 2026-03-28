@@ -87,3 +87,43 @@ button {
 ul {
   list-style: none;
 }
+
+/* ===== ACCESIBILIDAD GLOBAL ===== */
+
+/* Alto contraste */
+.alto-contraste {
+  filter: contrast(150%);
+}
+
+/* Modo oscuro */
+.modo-oscuro {
+  --blanco: #1a1a1a;
+  --negro: #ffffff;
+  --gris-claro: #2a2a2a;
+  --gris-medio: #aaaaaa;
+  --gris-oscuro: #dddddd;
+  --verde-fondo: #1a2e1a;
+  --verde-suave: #2d4a2d;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Espaciado de texto */
+.espaciado-texto * {
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+  line-height: 1.8 !important;
+}
+
+/* Daltonismo */
+[data-daltonismo="protanopia"] body {
+  filter: url(#protanopia);
+}
+
+[data-daltonismo="deuteranopia"] body {
+  filter: url(#deuteranopia);
+}
+
+[data-daltonismo="tritanopia"] body {
+  filter: url(#tritanopia);
+}

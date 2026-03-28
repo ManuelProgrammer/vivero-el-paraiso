@@ -1,0 +1,269 @@
+/* ===== LOGIN — Vivero El Paraíso ===== */
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--espacio-lg);
+}
+
+/* ===== FONDO ===== */
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(27, 94, 32, 0.85) 0%,
+    rgba(46, 125, 50, 0.75) 50%,
+    rgba(27, 94, 32, 0.85) 100%
+  );
+}
+
+/* ===== TARJETA ===== */
+.tarjeta {
+  position: relative;
+  z-index: 1;
+  background-color: var(--blanco);
+  border-radius: var(--radio-lg);
+  padding: var(--espacio-xl);
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--sombra-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-lg);
+}
+
+/* ===== LOGO ===== */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-md);
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+}
+
+.logoNombre {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--verde-oscuro);
+  line-height: 1;
+}
+
+.logoSlogan {
+  font-size: 0.7rem;
+  color: var(--verde-claro);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid var(--verde-fondo);
+}
+
+.tab {
+  flex: 1;
+  padding: var(--espacio-md);
+  background: none;
+  border: none;
+  font-size: var(--texto-normal);
+  font-weight: 500;
+  color: var(--gris-medio);
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab:hover {
+  color: var(--verde-oscuro);
+}
+
+.tabActivo {
+  color: var(--verde-oscuro);
+  font-weight: 700;
+  border-bottom-color: var(--verde-claro);
+}
+
+/* ===== FORMULARIO ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+}
+
+/* ===== CAMPOS ===== */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.camposDobles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-md);
+}
+
+.label {
+  font-size: var(--texto-pequeño);
+  font-weight: 600;
+  color: var(--gris-oscuro);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcono {
+  position: absolute;
+  left: var(--espacio-md);
+  color: var(--gris-medio);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.input {
+  width: 100%;
+  padding: var(--espacio-md) var(--espacio-md) var(--espacio-md) 44px;
+  border: 1px solid var(--verde-suave);
+  border-radius: var(--radio-md);
+  font-size: var(--texto-normal);
+  font-family: var(--fuente-principal);
+  color: var(--gris-oscuro);
+  outline: none;
+  transition: var(--transicion);
+  background-color: var(--blanco);
+}
+
+.input:focus {
+  border-color: var(--verde-claro);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.input::placeholder {
+  color: var(--gris-medio);
+}
+
+.btnMostrar {
+  position: absolute;
+  right: var(--espacio-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ===== ERROR ===== */
+.error {
+  padding: var(--espacio-sm) var(--espacio-md);
+  background-color: #fff5f5;
+  border: 1px solid #ffcdd2;
+  border-radius: var(--radio-md);
+  color: var(--error);
+  font-size: var(--texto-pequeño);
+  font-weight: 500;
+}
+
+/* ===== BOTÓN SUBMIT ===== */
+.btnSubmit {
+  padding: var(--espacio-md);
+  background-color: var(--verde-medio);
+  color: var(--blanco);
+  border: none;
+  border-radius: var(--radio-md);
+  font-size: var(--texto-normal);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+  margin-top: var(--espacio-sm);
+}
+
+.btnSubmit:hover:not(:disabled) {
+  background-color: var(--verde-oscuro);
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-md);
+}
+
+.btnSubmit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===== LINKS ===== */
+.linkTexto {
+  font-size: var(--texto-pequeño);
+  color: var(--gris-medio);
+  text-align: center;
+}
+
+.link {
+  color: var(--verde-claro);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.link:hover {
+  color: var(--verde-oscuro);
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  font-size: var(--texto-pequeño);
+  padding-top: var(--espacio-sm);
+  border-top: 1px solid var(--verde-fondo);
+}
+
+.footer a {
+  color: var(--verde-medio);
+  font-weight: 500;
+  transition: var(--transicion);
+}
+
+.footer a:hover {
+  color: var(--verde-oscuro);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: var(--espacio-lg);
+  }
+
+  .camposDobles {
+    grid-template-columns: 1fr;
+  }
+}

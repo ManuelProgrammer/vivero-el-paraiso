@@ -153,11 +153,11 @@ useEffect(() => {
         ) : (
           <>
             <Link to="/registro" className={styles.btnRegistro}>
-              Registrarse
-            </Link>
-            <Link to="/login" className={styles.btnLogin}>
-              Iniciar Sesión 👤
-            </Link>
+            Registrarse
+          </Link>
+          <Link to="/login" className={styles.btnLogin}>
+            Iniciar Sesión
+          </Link>
           </>
         )}
         </div>

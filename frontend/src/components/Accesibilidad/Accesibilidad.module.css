@@ -1,0 +1,228 @@
+/* ===== ACCESIBILIDAD — Vivero El Paraíso ===== */
+
+/* ===== BOTÓN FLOTANTE ===== */
+.btnFlotante {
+  position: fixed;
+  bottom: var(--espacio-xl);
+  left: var(--espacio-xl);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--verde-medio);
+  color: var(--blanco);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sombra-lg);
+  transition: var(--transicion);
+  z-index: 9999;
+}
+
+.btnFlotante:hover {
+  background-color: var(--verde-oscuro);
+  transform: scale(1.1);
+}
+
+/* ===== PANEL ===== */
+.panel {
+  position: fixed;
+  bottom: calc(var(--espacio-xl) + 64px);
+  left: var(--espacio-xl);
+  width: 280px;
+  background-color: var(--blanco);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-lg);
+  z-index: 9998;
+  overflow: hidden;
+  border: 1px solid var(--verde-suave);
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-md);
+  background-color: var(--verde-medio);
+  color: var(--blanco);
+}
+
+.headerTitulo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+}
+
+.titulo {
+  font-weight: 700;
+  font-size: var(--texto-normal);
+  line-height: 1;
+}
+
+.subtitulo {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.btnCerrar {
+  background: none;
+  border: none;
+  color: var(--blanco);
+  cursor: pointer;
+  font-size: var(--texto-normal);
+  padding: var(--espacio-xs);
+  border-radius: 50%;
+  transition: var(--transicion);
+  line-height: 1;
+}
+
+.btnCerrar:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* ===== OPCIONES ===== */
+.opciones {
+  padding: var(--espacio-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+}
+
+.opcion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.opcionLabel {
+  font-size: var(--texto-pequeño);
+  font-weight: 600;
+  color: var(--gris-oscuro);
+}
+
+/* ===== BOTONES DE OPCIÓN ===== */
+.opcionBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+  padding: var(--espacio-sm) var(--espacio-md);
+  background-color: var(--gris-claro);
+  border: 2px solid transparent;
+  border-radius: var(--radio-md);
+  font-size: var(--texto-pequeño);
+  font-weight: 500;
+  color: var(--gris-oscuro);
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+  text-align: left;
+  width: 100%;
+}
+
+.opcionBtn:hover {
+  background-color: var(--verde-fondo);
+  color: var(--verde-oscuro);
+}
+
+.opcionActiva {
+  background-color: var(--verde-fondo);
+  border-color: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-weight: 700;
+}
+
+.opcionIcono {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ===== TAMAÑO DE TEXTO ===== */
+.tamanoControles {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+}
+
+.btnTamano {
+  padding: var(--espacio-xs) var(--espacio-sm);
+  background-color: var(--verde-fondo);
+  border: 1px solid var(--verde-suave);
+  border-radius: var(--radio-sm);
+  font-size: var(--texto-pequeño);
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+}
+
+.btnTamano:hover {
+  background-color: var(--verde-suave);
+}
+
+.tamanoValor {
+  flex: 1;
+  text-align: center;
+  font-size: var(--texto-pequeño);
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+/* ===== SELECT DALTONISMO ===== */
+.selectDaltonismo {
+  width: 100%;
+  padding: var(--espacio-sm) var(--espacio-md);
+  border: 1px solid var(--verde-suave);
+  border-radius: var(--radio-md);
+  font-size: var(--texto-pequeño);
+  font-family: var(--fuente-principal);
+  color: var(--gris-oscuro);
+  background-color: var(--blanco);
+  cursor: pointer;
+  outline: none;
+  transition: var(--transicion);
+}
+
+.selectDaltonismo:focus {
+  border-color: var(--verde-claro);
+}
+
+/* ===== RESTABLECER ===== */
+.btnResetear {
+  width: 100%;
+  padding: var(--espacio-sm);
+  background: none;
+  border: none;
+  border-top: 1px solid var(--verde-fondo);
+  font-size: var(--texto-pequeño);
+  color: var(--gris-medio);
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+}
+
+.btnResetear:hover {
+  color: var(--verde-oscuro);
+  background-color: var(--verde-fondo);
+}
+
+/* ===== ATAJO ===== */
+.atajo {
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--gris-medio);
+  padding: var(--espacio-xs) var(--espacio-md);
+  background-color: var(--gris-claro);
+}
+
+.atajo kbd {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.65rem;
+}
