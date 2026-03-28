@@ -1,0 +1,200 @@
+/* ===== PRODUCT CARD — Vivero El Paraíso ===== */
+
+.tarjeta {
+  background-color: var(--blanco);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-sm);
+  overflow: hidden;
+  transition: var(--transicion);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tarjeta:hover {
+  box-shadow: var(--sombra-lg);
+  transform: translateY(-4px);
+}
+
+/* ===== IMAGEN ===== */
+.imagenWrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--gris-claro);
+  flex-shrink: 0;
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tarjeta:hover .imagen {
+  transform: scale(1.05);
+}
+
+/* ===== BADGES ===== */
+.badges {
+  position: absolute;
+  top: var(--espacio-sm);
+  left: var(--espacio-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  z-index: 2;
+}
+
+.badgeAgotado {
+  padding: 3px var(--espacio-sm);
+  background-color: var(--error);
+  color: var(--blanco);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgeNuevo {
+  padding: 3px var(--espacio-sm);
+  background-color: var(--verde-claro);
+  color: var(--blanco);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgePocasUnidades {
+  padding: 3px var(--espacio-sm);
+  background-color: var(--advertencia);
+  color: var(--negro);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== BOTÓN FAVORITO ===== */
+.btnFavorito {
+  position: absolute;
+  top: var(--espacio-sm);
+  right: var(--espacio-sm);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--blanco);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--gris-medio);
+  box-shadow: var(--sombra-sm);
+  transition: var(--transicion);
+  z-index: 2;
+}
+
+.btnFavorito:hover {
+  color: #e53935;
+  transform: scale(1.1);
+}
+
+.favoritoActivo {
+  color: #e53935;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  padding: var(--espacio-md);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transicion);
+}
+
+.tarjeta:hover .overlay {
+  opacity: 1;
+}
+
+.btnVerMas {
+  padding: var(--espacio-xs) var(--espacio-lg);
+  background-color: var(--blanco);
+  color: var(--verde-oscuro);
+  font-size: var(--texto-pequeño);
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  transition: var(--transicion);
+}
+
+.btnVerMas:hover {
+  background-color: var(--verde-claro);
+  color: var(--blanco);
+}
+
+/* ===== INFO ===== */
+.info {
+  padding: var(--espacio-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+  flex: 1;
+}
+
+.nombre {
+  font-size: var(--texto-normal);
+  font-weight: 600;
+  color: var(--negro);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.precio {
+  font-size: var(--texto-medio);
+  font-weight: 800;
+  color: var(--verde-oscuro);
+}
+
+/* ===== BOTÓN CARRITO ===== */
+.btnCarrito {
+  margin-top: auto;
+  width: 100%;
+  padding: var(--espacio-sm);
+  background-color: var(--verde-medio);
+  color: var(--blanco);
+  border: none;
+  border-radius: var(--radio-md);
+  font-size: var(--texto-pequeño);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+}
+
+.btnCarrito:hover {
+  background-color: var(--verde-oscuro);
+}
+
+.btnCarritoDeshabilitado {
+  background-color: var(--gris-claro);
+  color: var(--gris-medio);
+  cursor: not-allowed;
+}
+
+.btnCarritoDeshabilitado:hover {
+  background-color: var(--gris-claro);
+}
