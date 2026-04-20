@@ -4,7 +4,8 @@
 .btnFlotante {
   position: fixed;
   bottom: var(--espacio-xl);
-  left: var(--espacio-xl);
+  right: var(--espacio-xl);  /* ← cambiar left por right */
+  z-index: 9999;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -29,7 +30,7 @@
 .panel {
   position: fixed;
   bottom: calc(var(--espacio-xl) + 64px);
-  left: var(--espacio-xl);
+  right: var(--espacio-xl);  /* ← cambiar left por right */
   width: 280px;
   background-color: var(--blanco);
   border-radius: var(--radio-lg);

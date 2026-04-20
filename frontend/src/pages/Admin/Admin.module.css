@@ -1,0 +1,241 @@
+/* ===== PANEL ADMIN — Vivero El Paraíso ===== */
+
+.admin {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--gris-claro);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: var(--verde-oscuro);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: width 0.3s ease;
+  box-shadow: var(--sombra-lg);
+}
+
+.sidebarCerrado {
+  width: 64px;
+}
+
+/* ===== LOGO ===== */
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+  padding: var(--espacio-lg) var(--espacio-md);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  min-height: 80px;
+}
+
+.logoImg {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logoNombre {
+  font-size: var(--texto-normal);
+  font-weight: 800;
+  color: var(--blanco);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logoRol {
+  font-size: 0.7rem;
+  color: var(--verde-suave);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* ===== MENÚ ===== */
+.menu {
+  flex: 1;
+  padding: var(--espacio-md) var(--espacio-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  overflow-y: auto;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+  padding: var(--espacio-sm) var(--espacio-md);
+  background: none;
+  border: none;
+  border-radius: var(--radio-md);
+  color: rgba(255,255,255,0.7);
+  font-size: var(--texto-pequeño);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.menuItem:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: var(--blanco);
+}
+
+.menuItemActivo {
+  background-color: var(--verde-claro);
+  color: var(--blanco);
+  font-weight: 700;
+}
+
+.menuIcono {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.menuLabel {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ===== FOOTER SIDEBAR ===== */
+.sidebarFooter {
+  padding: var(--espacio-md) var(--espacio-sm);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.btnCerrarSesion {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+  padding: var(--espacio-sm) var(--espacio-md);
+  background: none;
+  border: none;
+  border-radius: var(--radio-md);
+  color: rgba(255,255,255,0.7);
+  font-size: var(--texto-pequeño);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: var(--transicion);
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.btnCerrarSesion:hover {
+  background-color: rgba(255,0,0,0.2);
+  color: #ff6b6b;
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+  flex: 1;
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-md) var(--espacio-xl);
+  background-color: var(--blanco);
+  box-shadow: var(--sombra-sm);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.headerIzquierda {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+}
+
+.btnToggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--verde-oscuro);
+  padding: var(--espacio-xs);
+  border-radius: var(--radio-sm);
+  transition: var(--transicion);
+}
+
+.btnToggle:hover {
+  background-color: var(--verde-fondo);
+}
+
+.headerTitulo {
+  font-size: var(--texto-medio);
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+.headerDerecha {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-lg);
+}
+
+.usuarioNombre {
+  font-size: var(--texto-pequeño);
+  font-weight: 600;
+  color: var(--gris-oscuro);
+}
+
+.btnVerSitio {
+  padding: var(--espacio-xs) var(--espacio-md);
+  background-color: var(--verde-fondo);
+  color: var(--verde-oscuro);
+  border-radius: var(--radio-full);
+  font-size: var(--texto-pequeño);
+  font-weight: 600;
+  transition: var(--transicion);
+}
+
+.btnVerSitio:hover {
+  background-color: var(--verde-suave);
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  padding: var(--espacio-xl);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 64px;
+  }
+
+  .contenido {
+    margin-left: 64px;
+  }
+
+  .logoNombre,
+  .logoRol,
+  .menuLabel,
+  .btnCerrarSesion span:last-child {
+    display: none;
+  }
+}

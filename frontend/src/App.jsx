@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 
 import Home from './pages/Home/Home'
 import Tienda from './pages/Tienda/Tienda'
@@ -15,11 +15,13 @@ import Accesibilidad from './components/Accesibilidad/Accesibilidad'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 
-function App() {
+function Layout() {
+  const location = useLocation()
+  const esAdmin = location.pathname.startsWith('/admin')
+
   return (
-    <BrowserRouter>
-    <Accesibilidad />
-      <Navbar />
+    <>
+      {!esAdmin && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tienda" element={<Tienda />} />
@@ -33,7 +35,16 @@ function App() {
         <Route path="/soporte" element={<Soporte />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
-      <Footer />
+      {!esAdmin && <Footer />}
+      <Accesibilidad />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout />
     </BrowserRouter>
   )
 }
